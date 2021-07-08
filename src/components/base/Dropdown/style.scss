@@ -1,0 +1,30 @@
+.dropdown{
+    height: 36px;
+    border-radius: 6px;
+    .title{
+        font-size: 13px;
+        line-height: 15px;
+        // display: flex;
+        // align-items: center;
+        text-align: right;
+        color: #000000;
+        opacity: 0.3;
+        padding-right: 10px;
+    }
+    span{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #423637;
+    }
+    .icon{
+        display: block;
+    }
+}
+.dropdown.color{
+    .title{
+      color: #EB1C24;
+    }
+    span{color: #EB1C24;}
+    .icon{color: #EB1C24;}
+}

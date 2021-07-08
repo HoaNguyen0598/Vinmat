@@ -1,0 +1,21 @@
+.headCol {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &_top {
+    background: #ffc107;
+    border-radius: 10px 10px 5px 5px;
+    // width: 180px;
+    height: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  &_bottom {
+    background: #e2e2e2;
+    border-radius: 5px 5px 10px 10px;
+    // width: 180px;
+    height: 25px;
+  }
+}

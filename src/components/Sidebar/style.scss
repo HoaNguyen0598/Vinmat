@@ -1,0 +1,41 @@
+.sidebar {
+  width: 70px;
+  height: 100vh;
+  background: #eb1c24;
+  box-shadow: 2px 0px 4px rgba(105, 11, 11, 0.08);
+  margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_logo {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    // padding: 10px;
+    margin: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_camera {
+    padding-bottom: 40px;
+  }
+  &_virus {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    background: #000000;
+    opacity: 0.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    .vector {
+      //   background-color: #fff;
+      z-index: 2;
+    }
+  }
+}
