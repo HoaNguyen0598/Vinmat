@@ -1,5 +1,5 @@
 //lib
-import { DatePicker, Menu, Select  } from 'antd';
+import { DatePicker, Menu  } from 'antd';
 import 'antd/dist/antd.css';
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
@@ -15,6 +15,9 @@ import CartBase from './components/component/CartBase/CartBase';
 import CardShelf from './components/component/CardSheft/CardShelf';
 import Screen from './components/component/Sreen/Screen';
 import CardShelfMin from './components/component/CardShelfMin/CardShelfMin';
+import CardCountTotal from './image/CardCount/CardCountTotal';
+import CardCountActive  from './image/CardCount/CardCountActive';
+import CardCountempty from './image/CardCount/CardCountempty';
 
 const shelf = [
   {
@@ -476,15 +479,6 @@ function App() {
       setDataShelf3(newData3) // set lại data kệ 2
   }
 
-  //handle change select
-  // const handleChangeSelect = (e) =>{
-  //   console.log(e);
-  //   if(e === '2'){
-  //     setCheckDropdown(true)
-  //   }else{
-  //     setCheckDropdown(false)
-  //   }
-  // }
 
   return (
     <div className="app">
@@ -526,23 +520,26 @@ function App() {
             <div className="row">
               <div className="col col-lg-4 col-md-6 col-sm-12 pb-4">
                 <CartBase
-                  img="https://images.unsplash.com/photo-1618590067824-5ba32ca76ce9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  img={<CardCountTotal />}
                   count={totalShelfUse}
                   description="Total Usage Times"
+                  className="total"
                 />
               </div>
               <div className="col col-lg-4 col-md-6 col-sm-12 pb-4">
                 <CartBase
-                  img="https://images.unsplash.com/photo-1618590067824-5ba32ca76ce9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  img={<CardCountActive />}
                   count={isShelfActive}
                   description="CAbins In Use"
+                  className="active"
                 />
               </div>
               <div className="col col-lg-4 col-md-6 col-sm-12 pb-4">
                 <CartBase
-                  img="https://images.unsplash.com/photo-1618590067824-5ba32ca76ce9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                   img={<CardCountempty />}
                   count={isShelfEmpty}
                   description="Cabins Avaliable"
+                  className="empty"
                 />
               </div>
             </div>

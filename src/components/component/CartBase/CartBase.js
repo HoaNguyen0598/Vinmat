@@ -1,11 +1,11 @@
 import React from 'react'
 import './style.scss'
 
-export default function CartBase({ count, description, img }) {
+export default function CartBase({ className, count, description, img }) {
     return (
-        <div className="cardBase">
+        <div className={`cardBase ${className ? className : ""}`}>
             <div className="cardBase_image">
-                <img src={img} />
+                {img}
             </div>
             <div className="cardBase_info">
                 <p className="cardBase_info-count">{count}</p>
