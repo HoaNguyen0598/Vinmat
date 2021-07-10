@@ -1,17 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './style.scss'
 import Beel from '../../image/Beel/Beel'
-// import Ellipse from '../../image/User'
+import { Link } from "react-router-dom";
+
+const LinkNavBar = [
+    {
+        name: "DASHBOARD",
+        link: "/",
+        id: 1,
+        active: false,
+    },
+    {
+        name: "CABIN HISTORY",
+        link: "/history",
+        id: 2,
+        active: false
+    },
+    {
+        name: "ADMIN ACCOUNT",
+        link: "/account",
+        id: 3,
+        active: false
+    },
+    {
+        name: "ACTION LOGS",
+        link: "/action",
+        id: 4,
+        active: true
+    },
+    
+]
 
 export default function Header() {
+
+    const [isActive,setActive] = useState()
+
+    const handleClickLink = (id) =>{
+        console.log(id)
+        setActive(id)
+    }
+
     return (
         <div className="header">
             <h1 className="header_title">Locker Management</h1>
             <ul className="menu">
-                <li className="menu_item active">DASHBOARD</li>
-                <li className="menu_item">CABIN HISTORY</li>
-                <li className="menu_item">ADMIN ACCOUNT</li>
-                <li className="menu_item">ACTION LOGS</li>
+                {
+                    LinkNavBar.map((item,index) =>{
+                        return(
+                            <li key={index} className={`menu_item ${item.id === isActive ? 'active' : ''}`}>
+                                <Link to={item.link} onClick={() =>handleClickLink(item.id)}>
+                                    {item.name}
+                                </Link>
+                            </li>
+                        )
+                    })
+                }
             </ul>
             <div className="header_right">
                 <Beel className="bell" />

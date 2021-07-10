@@ -21,22 +21,26 @@
     text-decoration: none;
     list-style: none;
     margin: 0;
+    padding-right: 150px;
     @media (max-width: 993px) {
       display: none;
     }
     &_item {
       cursor: pointer;
-      font-weight: 400px;
-      font-size: 13px;
-      line-height: 15.23px;
-      margin-right: 40px;
-      // font-family: Roboto;
-    }
-    &_item.active {
-      border-bottom: 2px solid #eb1c24;
       height: 100%;
       display: flex;
       align-items: center;
+      margin-right: 40px;
+      a {
+        font-weight: 400px;
+        font-size: 13px;
+        // line-height: 15.23px;
+        text-decoration: none;
+        color: #423637;
+      }
+    }
+    &_item.active {
+      border-bottom: 2px solid #eb1c24;
     }
   }
   &_right {
