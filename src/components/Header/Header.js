@@ -33,7 +33,7 @@ const LinkNavBar = [
 
 export default function Header() {
 
-    const [isActive,setActive] = useState()
+    const [isActive,setActive] = useState(1)
 
     const handleClickLink = (id) =>{
         console.log(id)

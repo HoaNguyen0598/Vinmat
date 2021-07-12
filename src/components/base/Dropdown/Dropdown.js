@@ -1,5 +1,5 @@
 import React from 'react'
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Button } from 'antd';
 import './style.scss'
 

@@ -1,0 +1,93 @@
+.history {
+  .content_title {
+    margin-bottom: 30px;
+  }
+  .TableHistory {
+    // border-spacing: 0 10px !important;
+    // border-collapse: separate !important;
+    padding-bottom: 50px;
+    .table_header {
+      th {
+        font-family: Tahoma;
+        font-size: 12px;
+        line-height: 106.65%;
+        text-transform: capitalize;
+        color: #979797;
+        height: 60px;
+      }
+    }
+    .table_body {
+      tr {
+        td {
+          height: 60px;
+          // opacity: 0.9;
+          border-top: 1px solid #e6eaee;
+          border-bottom: 1px solid #e6eaee;
+          box-sizing: border-box;
+          box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.0251);
+          color: #595959;
+          &:first-child {
+            border-left: 1px solid #e6eaee;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+          &:last-child {
+            border-right: 1px solid #e6eaee;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            position: relative;
+          }
+        }
+        &:hover {
+          background: #e2e2e2;
+        }
+        .image_table {
+          width: 40px;
+          height: 40px;
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+          .active {
+            border: 1px solid #ed1c24;
+          }
+        }
+        .reset {
+          .icon_reset {
+            cursor: pointer;
+          }
+          .popup {
+            &::before {
+              content: "";
+              border-style: solid;
+              border-width: 12px 14px;
+              border-color: transparent transparent #595959 transparent;
+              position: absolute;
+              top: -23px;
+              right: 15px;
+            }
+            display: none;
+          }
+        }
+        .reset:hover {
+          .popup {
+            z-index: 1000;
+            position: absolute;
+            display: block;
+            background: #595959;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 5px;
+            padding: 10px 15px 7px 17px;
+            right: 0;
+            text-align: start;
+            margin-top: 10px;
+            span {
+              margin: 0;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

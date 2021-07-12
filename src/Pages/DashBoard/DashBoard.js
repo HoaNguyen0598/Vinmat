@@ -429,6 +429,17 @@ function handleMenuClick(e) {
     </Menu>
   );
 
+  const menuRegion = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item key="1">
+        Ho Chi Minh
+      </Menu.Item>
+      <Menu.Item key="2">
+        Ha noi
+      </Menu.Item>
+    </Menu>
+  );
+
    //handle click shelf
    const handleClickShelf = (id) =>{
     // console.log('id: ',id)
@@ -485,6 +496,7 @@ function handleMenuClick(e) {
                 <DropdownBase
                   title="Region"
                   item="Ho Chi Minh"
+                  menu={menuRegion}
                 />
               </div>
               <div className="store">
