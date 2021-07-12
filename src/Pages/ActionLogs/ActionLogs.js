@@ -428,6 +428,8 @@ export default function ActionLogs() {
                             breakClassName={'break-me'}
                             pageCount={pageCount}
                             onPageChange={changePage}
+                            marginPagesDisplayed={1}
+                            pageRangeDisplayed={2}
                             containerClassName={'pagination'}
                             activeClassName={'active'}
                             previousClassName={"previousLinkClassName"}

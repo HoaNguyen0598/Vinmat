@@ -169,10 +169,8 @@ export default function Admin() {
                             nextLabel={'>'}
                             breakLabel={'...'}
                             breakClassName={'break-me'}
-                            // pageCount={this.state.pageCount}
-                            // marginPagesDisplayed={2}
-                            // pageRangeDisplayed={5}
-                            // onPageChange={this.handlePageClick}
+                            marginPagesDisplayed={1}
+                            pageRangeDisplayed={2}
                             containerClassName={'pagination'}
                             activeClassName={'active'}
                             previousClassName={"previousLinkClassName"}
