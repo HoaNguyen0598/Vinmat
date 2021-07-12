@@ -3,7 +3,7 @@ import './style.scss'
 import Admin from '../../../image/Admin/Admin'
 import CardConfirm from '../CardConfirm/CardConfirm';
 
-export default function CardAdmin({id,name,img,phone,registered,handleClickIcon}) {
+export default function CardAdmin({id,name,img,phone,registered,handleClickDelete}) {
     const [button,setButton] = useState() //
     const [isClickIcon,setClickIcon] = useState(false)  // open button delete
     const [modalDelete,setModalDelete] = useState(false) //open modal delete
@@ -22,6 +22,7 @@ export default function CardAdmin({id,name,img,phone,registered,handleClickIcon}
      const handleClickYes = () =>{
         setModalDelete(false)
         setClickIcon(!isClickIcon)
+        handleClickDelete && handleClickDelete(button)
     }
     //handle click cancel modal
     const handleClickCancel = () =>{

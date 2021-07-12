@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'antd'
 
 import DropdownBase from '../../components/base/Dropdown/Dropdown'
@@ -87,9 +87,13 @@ const dataAdmin = [
 ]
 
 export default function Admin() {
+    const [dataShow,setDataShow] = useState(dataAdmin)
 
-    const handleClickIcon = (id) =>{
+    const handleClickDelete = (id) =>{
         console.log(id);
+        const newData = dataShow.filter(item => item.id !== id)
+        console.log('newData: ',newData);
+        setDataShow(newData)
     }
 
     function handleMenuClick(e) {
@@ -143,7 +147,7 @@ export default function Admin() {
             </div>
             <div className="row pt-4 pb-4">
                 {
-                    dataAdmin && dataAdmin.map((item,index) =>{
+                    dataShow && dataShow.map((item,index) =>{
                         return(
                             <div key={index} className="col col-xl-3 col-lg-4 col-md-6 col-sm-12 pb-4">
                                 <CardAdmin
@@ -152,7 +156,7 @@ export default function Admin() {
                                     img={item.avatar}
                                     phone={item.phone}
                                     registered={item.registered_date}
-                                    handleClickIcon={handleClickIcon}
+                                    handleClickDelete={handleClickDelete}
                                 />
                             </div>
                         )
