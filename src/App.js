@@ -8,10 +8,10 @@ import { Switch, Route } from "react-router-dom";
 import './App.scss';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Test from './Pages/Test';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import History from './Pages/History/History';
 import Admin from './Pages/Admin/Admin';
+import ActionLogs from './Pages/ActionLogs/ActionLogs';
 
 function App() {
  
@@ -25,7 +25,7 @@ function App() {
                     <Route exact path="/" component={DashBoard} />
                     <Route exact path="/history" component={History} />
                     <Route exact path="/account" component={Admin} />
-                    <Route exact path="/action" component={Test} />
+                    <Route exact path="/action" component={ActionLogs} />
                     {/* <Route component={Error} /> */}
             </Switch>
         </div>

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {  } from 'react';
 import { Menu } from 'antd'
 
 import DropdownBase from '../../components/base/Dropdown/Dropdown'
 import CardAdmin from '../../components/component/CardAdmin/CardAdmin'
-import CardConfirm from '../../components/component/CardConfirm/CardConfirm'
+import ReactPaginate from 'react-paginate';
 
 const dataAdmin = [
     {
@@ -88,6 +88,10 @@ const dataAdmin = [
 
 export default function Admin() {
 
+    const handleClickIcon = (id) =>{
+        console.log(id);
+    }
+
     function handleMenuClick(e) {
     }
     const menu = (
@@ -137,23 +141,41 @@ export default function Admin() {
                     </div>    
                 </div>
             </div>
-            <div className="row pt-4">
+            <div className="row pt-4 pb-4">
                 {
                     dataAdmin && dataAdmin.map((item,index) =>{
                         return(
                             <div key={index} className="col col-xl-3 col-lg-4 col-md-6 col-sm-12 pb-4">
                                 <CardAdmin
+                                    id={item.id}
                                     name={item.name}
                                     img={item.avatar}
                                     phone={item.phone}
                                     registered={item.registered_date}
+                                    handleClickIcon={handleClickIcon}
                                 />
                             </div>
                         )
                     })
                 }
             </div>
-            {/* <CardConfirm /> */}
+            <div className="pagination">
+                        <ReactPaginate 
+                            previousLabel={'<'}
+                            nextLabel={'>'}
+                            breakLabel={'...'}
+                            breakClassName={'break-me'}
+                            // pageCount={this.state.pageCount}
+                            // marginPagesDisplayed={2}
+                            // pageRangeDisplayed={5}
+                            // onPageChange={this.handlePageClick}
+                            containerClassName={'pagination'}
+                            activeClassName={'active'}
+                            previousClassName={"previousLinkClassName"}
+                            nextLinkClassName={"nextBtn"}
+                            disabledClassName={"paginationDisabled"}
+                        />
+            </div>
         </div>
     )
 }

@@ -6,7 +6,7 @@ import HeadCol from '../../components/component/HeadCol/HeadCol';
 
 
 //cus
-// import './App.scss';    
+import './Style.scss';    
 import DropdownBase from '../../components/base/Dropdown/Dropdown';
 import CartBase from '../../components/component/CartBase/CartBase';
 import CardShelf from '../../components/component/CardSheft/CardShelf';
@@ -484,7 +484,7 @@ function handleMenuClick(e) {
 
 
     return (
-        <>
+        <div className="dashboard">
         <div className="content_title">
             <div className="content_title-left">
               <p>Current time</p>
@@ -549,7 +549,7 @@ function handleMenuClick(e) {
               !isCheckDropdown
               ?
               <div className="row">
-              <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12">
+              <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 pb-4">
                 <div className="grid_header">
                   <div className="item2">
                   <HeadCol isHead/>
@@ -663,6 +663,6 @@ function handleMenuClick(e) {
               </div>
             }
           </div>
-        </>
+        </div>
     )
 }

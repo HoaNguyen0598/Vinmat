@@ -1,7 +1,9 @@
 //lib
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DatePicker, Menu } from 'antd'
 import ReactPaginate from 'react-paginate';
+import { Modal } from 'antd';
+import ModalLocker from './ModalLocker';
 
 //cus
 import './Style.scss'
@@ -12,7 +14,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Truong Minh Quan",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -22,7 +26,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Truong Minh Quan",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -32,7 +38,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Truong Minh Quan",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -42,7 +50,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -52,7 +62,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -62,7 +74,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -72,7 +86,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -82,7 +98,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -92,7 +110,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -102,7 +122,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -112,7 +134,9 @@ const dataUser = [
     {
         date: '23/06/2019',
         customer: "https://img.pngio.com/user-icons-in-all-style-for-graphic-design-and-user-interfaces-user-icons-png-200_200.png",
+        admin: "https://cdn.profoto.com/cdn/0532192/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-3840x2160px-2.jpg?width=1280&quality=75&format=jpg&mode=crop&height=1280",
         cabin: "06",
+        name_admin: "Nguyen Van Hoa",
         from: "08:03",
         to: "09:40",
         total_time_use: "1 giờ 10 phút",
@@ -123,7 +147,8 @@ const dataUser = [
 
 export default function History() {
 
-    // const [activeIconReset,setActiveIconReset] = useState()
+    const [isModal,setModal] = useState(false) // set open modal when click table
+    const [dataModal,setDataModal] = useState()
 
     // handle click dropdown
 function handleMenuClick(e) {
@@ -156,13 +181,19 @@ const onChange = () =>{
 
 }
 
-// const handleClickPopup = (id) =>{
-//     console.log(id);
-//     setActiveIconReset(id)
-// }
+//handle click mở modal
+const handleClickTr = (data) =>{
+    setDataModal(data)
+    setModal(true)
+}
 
+// tắt modal table
+const handleCancelModal = () =>{
+    setModal(false)
+}
 
     return (
+        <>
         <div className="history">
             <div className="content_title">
                 <div className="content_title-left">
@@ -206,11 +237,11 @@ const onChange = () =>{
                         {
                             dataUser && dataUser.map((item,index) =>{
                                 return(
-                                    <tr key={index}>
+                                    <tr key={index} onClick={() => handleClickTr(item)}>
                                         <td className="pl-4" width="15%">{item.date}</td>
                                         <td className="" width="15%">
                                             <div className="image_table">
-                                                <img className={`${item.issActive ? 'active' : ''}`} src={item.customer} />
+                                                <img className={`${item.issActive ? 'active' : ''}`} src={item.customer} alt="history"/>
                                             </div>
                                         </td>
                                         <td className="" width="10%">{item.cabin}</td>
@@ -255,5 +286,17 @@ const onChange = () =>{
                         />
             </div>
         </div>
+        <Modal visible={isModal} footer={null} onCancel={handleCancelModal} width={810}>
+                {
+                    dataModal &&
+                    <ModalLocker 
+                        avatarUser={dataModal.customer}
+                        avatarAdmin={dataModal.admin}
+                        nameAdmin={dataModal.name_admin}
+                        isActive={dataModal.issActive}
+                    />
+                }
+        </Modal>
+        </>
     )
 }
