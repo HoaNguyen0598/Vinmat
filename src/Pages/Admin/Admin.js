@@ -100,6 +100,18 @@ export default function Admin() {
         </Menu.Item>
     </Menu>
   );
+
+  const menuRegion = (
+    <Menu onClick={handleMenuClick}>
+        <Menu.Item key="1">
+        Ho Chi Minh
+        </Menu.Item>
+        <Menu.Item key="2">
+        Ha Noi
+        </Menu.Item>
+    </Menu> 
+)
+
     return (
         <div className="admin">
             <div className="content_title">
@@ -111,6 +123,7 @@ export default function Admin() {
                         <DropdownBase
                         title="Region"
                         item="Ho Chi Minh"
+                        menu={menuRegion}
                         />
                     </div>
                     <div className="store">
@@ -140,7 +153,7 @@ export default function Admin() {
                     })
                 }
             </div>
-            <CardConfirm />
+            {/* <CardConfirm /> */}
         </div>
     )
 }

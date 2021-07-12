@@ -140,25 +140,20 @@
       color: black;
       text-decoration: none;
     }
-    .previousLinkClassName {
-      a {
-      }
+    .previousLinkClassName a {
     }
-    .nextBtn {
-      a {
-      }
+    .nextBtn a {
     }
-    .active {
-      a {
-        background: #ed1c24;
-        border: none;
-        color: #ffffff;
-      }
+    .active a {
+      background: #ed1c24;
+      border: none;
+      color: #ffffff;
     }
-    .paginationDisabled {
-      a {
-        color: #595959;
-      }
+    .paginationDisabled a {
+      color: #e6eaee;
+    }
+    .break-me a {
+      border: none;
     }
   }
 }
